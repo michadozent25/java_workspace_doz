@@ -25,4 +25,8 @@ public class BookRepository {
         return null;
     }
 
+    public List<Book> findByTitle(int id){
+        return null;
+    }
+
 }
