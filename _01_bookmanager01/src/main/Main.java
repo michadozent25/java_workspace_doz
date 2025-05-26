@@ -1,17 +1,30 @@
 package main;
 
 import model.Book;
+import service.BookService;
+import service.BookServiceImpl;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+/*
+
+
+ Teste den BookService, in dem du Bücher erzeugst und die BookService-Methoden
+ aufrufst.
+ Mache mit System.out.println einige Ausgaben
+ */
+
 public class Main {
     public static void main(String[] args) {
 
-
+        BookService bookService = new BookServiceImpl();
         Book b1 = new Book(1,"JavaBuch","Max",2000);
         Book b2 = new Book(2,"JavaBuch","Max",2000);
 
-        System.out.println(b1.equals(b2));
+
+        bookService.save(b1);
+        bookService.save(b2);
+        System.out.println(bookService.getAll());
+
 
     }
 }

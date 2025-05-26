@@ -4,7 +4,13 @@ import model.Book;
 import repository.BookRepository;
 
 import java.util.List;
+/*
+ Ruft Methoden von BookRepository
+ - Alle Methoden aus BookRepository können angepasst/ ergänzt/ verbessert
 
+ Aufgabe:
+ Ergänze den fehlenden Code
+ */
 public class BookServiceImpl implements BookService{
     BookRepository repository = new BookRepository();
 

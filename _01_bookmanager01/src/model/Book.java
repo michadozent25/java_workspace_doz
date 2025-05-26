@@ -2,6 +2,12 @@ package model;
 
 import java.util.Objects;
 
+/**
+ * Typische Model-Klasse (Daten)
+ * - Instanzvariablen, Fields
+ * - Konstruktoren
+ * - equals + toString
+ */
 public class Book{
     private int id;
     private String title;

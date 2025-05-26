@@ -3,7 +3,11 @@ package service;
 import model.Book;
 
 import java.util.List;
-
+/*
+Interface
+- nur abstrakte Methoden
+- beschreiben Methoden für UI/
+ */
 public interface BookService {
 
     boolean save( Book book  );

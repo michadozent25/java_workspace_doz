@@ -5,6 +5,11 @@ import model.Book;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Klasse für den Datenbankzugriff (DummyDB books)
+
+ Ergänze die fehlenden Methoden
+ */
 public class BookRepository {
     static  ArrayList<Book> books = new ArrayList<>();  //DBDummy
 
@@ -16,5 +21,8 @@ public class BookRepository {
         return books;
     }
 
+    public Book findById(int id){
+        return null;
+    }
 
 }
