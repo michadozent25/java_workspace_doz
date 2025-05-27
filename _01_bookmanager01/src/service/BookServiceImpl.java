@@ -27,11 +27,11 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book getById(int id) {
-        return null;
+        return repository.findById(id);
     }
 
     @Override
     public List<Book> getByTitle(String title) {
-        return List.of();
+        return repository.findByTitle(title);
     }
 }

@@ -22,11 +22,24 @@ public class BookRepository {
     }
 
     public Book findById(int id){
-        return null;
+      for(Book b: books){
+          if(b.getId()==id){
+              return b;
+          }
+      }
+      return null;
     }
 
-    public List<Book> findByTitle(int id){
-        return null;
+    public List<Book> findByTitle(String title){
+        List<Book> result = new ArrayList<>();
+        for (Book book: books){
+            if(book.getTitle().equalsIgnoreCase(title)){
+                result.add(book);
+            }
+
+        }
+        return result;
     }
+
 
 }

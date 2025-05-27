@@ -15,7 +15,6 @@ public class Book{
     private int year;
 
 
-
     public Book(){
 
     }
@@ -24,6 +23,7 @@ public class Book{
         this.title = title;
         this.author = author;
         this.year = year;
+
     }
 
     public int getId() {
@@ -79,4 +79,7 @@ public class Book{
     public int hashCode() {
         return Objects.hash(id, title, author, year);
     }
+
+
+
 }
