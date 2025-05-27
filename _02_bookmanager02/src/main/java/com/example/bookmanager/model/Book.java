@@ -1,13 +1,14 @@
 package com.example.bookmanager.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Die Klasse Book wird als Entity konfiguriert und kann von JPA (Java Persistence API)
+ * verwendet werden, um Objekte in der Datenbank zu speichern
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Data // get/set/equals/toString
@@ -21,5 +22,11 @@ public class Book {
 
     private String title;
     private String author;
+    @Column(name = "publishing_year")
     private int year;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
 }
