@@ -4,6 +4,7 @@ import model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 /*
 Klasse für den Datenbankzugriff (DummyDB books)
@@ -39,6 +40,11 @@ public class BookRepository {
 
         }
         return result;
+    }
+
+
+    public void deleteById(int id){
+        books.removeIf(book -> book.getId()==id);
     }
 
 
