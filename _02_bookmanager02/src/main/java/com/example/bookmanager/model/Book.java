@@ -19,8 +19,9 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)//AutoIncrement
     private int id;
 
-
+    @Column(length = 100)
     private String title;
+    @Column(length = 100)
     private String author;
     @Column(name = "publishing_year")
     private int year;
