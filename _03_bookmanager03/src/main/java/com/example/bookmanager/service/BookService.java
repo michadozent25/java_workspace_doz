@@ -6,7 +6,10 @@ import java.util.List;
 
 ;
 
-
+/**
+ * Eigenes, unabhängiges Interface
+ * -> definiert unsere Features
+ */
 public interface BookService {
 
     Book save(Book book  );
@@ -21,9 +24,9 @@ public interface BookService {
 
     // hier weitere: deleteById, update(),...
     // Aufgabe: Implementiere und teste diese Methoden
-//    void delete(int id);
-//
-//    Book update(Book book);
-//
-//    Book findByISBN(String isbn);
+    void delete(int id);
+
+    Book update(int id, Book book);
+
+    Book findByISBN(String isbn);
 }

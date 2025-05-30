@@ -7,7 +7,14 @@ import java.util.List;
 
 public interface BookRepository extends JpaRepository<Book,Integer> {
 
+    /**
+     * findByTitleIgnoreCase - Namens-Konvention:findByField
+     * @param title
+     * @return
+     * SELECT * FROM book WHERE title = ...
+     */
     List<Book> findByTitleIgnoreCase(String title);
+    Book findByIsbnIgnoreCase(String title);
 
     /**
      *

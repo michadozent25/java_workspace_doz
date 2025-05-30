@@ -18,7 +18,7 @@
 
 ### Aufgabe
 * Aufgabe: Implementiere und teste diese Methoden 
-* zuerst in BookService schreiben, danach  implementieren 
+* zuerst in BookService schreiben, danach implementieren 
 
 * void delete(int id);
 * Book update(int id, Book book);

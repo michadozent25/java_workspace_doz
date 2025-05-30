@@ -11,9 +11,8 @@ import java.util.Optional;
 @Service // kein Objekt erzeugen , @Autowired BookService
 public class BookServiceImpl implements BookService{
 
-    @Autowired  // holt Implementierung - Dependency Injection
+    @Autowired  // holt Implementierung/ Objekt wird erzeugt - Dependency Injection
     private BookRepository repository;
-
     @Override
     public Book save(Book book) {
         return repository.save(book);
@@ -26,12 +25,12 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book getById(int id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
     public List<Book> getByTitle(String title) {
-        return List.of();
+        return repository.findByTitleContaining(title);
     }
 
     @Override
@@ -50,5 +49,27 @@ public class BookServiceImpl implements BookService{
 //          repository.save(b);
 //        }
 //        return null;
+    }
+
+    @Override
+    public void delete(int id) {
+
+        repository.deleteById(id);
+    }
+
+    @Override
+    public Book update(int id, Book book) {
+        Book b = getById(id);
+        if(b!=null){
+            repository.save(book);// save wirkt wie update
+        }
+        //TODO Book-Fields einzeln prüfen
+        return null;
+    }
+
+    @Override
+    public Book findByISBN(String isbn) {
+       return repository.findByIsbnIgnoreCase(isbn);
+
     }
 }

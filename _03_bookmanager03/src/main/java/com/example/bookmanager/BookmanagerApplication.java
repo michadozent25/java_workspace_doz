@@ -2,6 +2,7 @@ package com.example.bookmanager;
 
 import com.example.bookmanager.model.Book;
 import com.example.bookmanager.repository.BookRepository;
+import com.example.bookmanager.service.BookServiceImpl;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +17,6 @@ public class BookmanagerApplication {
 	public static void main(String[] args) {
 
 		SpringApplication.run(BookmanagerApplication.class, args);
-
 
 
 	}
