@@ -59,16 +59,21 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public Book update(int id, Book book) {
+
         Book b = getById(id);
-        if(b!=null){
-            repository.save(book);// save wirkt wie update
+        if(b!=null){  //FIXME Fields prüfen!
+            b.setIsbn(book.getIsbn());
+            b.setTitle(book.getTitle());
+            b.setAuthor(book.getAuthor());
+            b.setYear(book.getYear());
+           return repository.save(book);// save wirkt wie update
         }
-        //TODO Book-Fields einzeln prüfen
+
         return null;
     }
 
     @Override
-    public Book findByISBN(String isbn) {
+    public Book getByISBN(String isbn) {
        return repository.findByIsbnIgnoreCase(isbn);
 
     }

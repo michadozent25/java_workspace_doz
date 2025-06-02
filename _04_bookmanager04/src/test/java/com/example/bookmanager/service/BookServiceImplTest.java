@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest //Starte im Springmodus
 class BookServiceImplTest {
 
@@ -48,6 +46,6 @@ class BookServiceImplTest {
 
     @Test
     void findByISBN() {
-        System.out.println(bookService.findByISBN("SDS42342"));
+        System.out.println(bookService.getByISBN("SDS42342"));
     }
 }
