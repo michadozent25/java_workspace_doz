@@ -14,6 +14,12 @@ import java.util.List;
 public class BookServiceImpl implements BookService{
     BookRepository repository = new BookRepository();
 
+
+    /**
+     *
+     * @param book -
+     * @return boolean if saved in db
+     */
     @Override
     public boolean save(Book book) {
         //prüfen if ...

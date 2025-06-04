@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service // kein Objekt erzeugen , @Autowired BookService
+//@Service // kein Objekt erzeugen , @Autowired BookService
 public class BookServiceImpl implements BookService{
 
     @Autowired  // holt Implementierung/ Objekt wird erzeugt - Dependency Injection

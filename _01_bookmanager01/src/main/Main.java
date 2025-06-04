@@ -24,7 +24,7 @@ public class Main {
         Book b3 = new Book(4,"KochBuch2","Anna",1980);
 
 
-        bookService.save(b1);
+        bookService.save(b1);//
         bookService.save(b2);
         bookService.save(b3);
 

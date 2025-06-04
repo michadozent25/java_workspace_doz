@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html"},{"p":"model","l":"Book"},{"p":"repository","l":"BookRepository"},{"p":"service","l":"BookService"},{"p":"service","l":"BookServiceImpl"},{"p":"main","l":"Main"}];updateSearchResults();
