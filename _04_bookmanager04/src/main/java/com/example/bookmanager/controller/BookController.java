@@ -43,6 +43,7 @@ public class BookController {
 
     @PostMapping
     public Book createBook(@RequestBody Book book){
+        System.out.println("Save Book");
         return bookService.save(book);
     }
 

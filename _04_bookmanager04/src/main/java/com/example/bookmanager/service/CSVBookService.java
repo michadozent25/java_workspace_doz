@@ -4,7 +4,7 @@ import com.example.bookmanager.model.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-@Service
+
 public  class CSVBookService implements BookService{
     @Override
     public Book save(Book book) {
