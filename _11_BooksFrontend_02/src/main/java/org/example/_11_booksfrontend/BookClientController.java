@@ -55,15 +55,24 @@ public class BookClientController {
             }
 
         } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Verbindungsfehler");
-            alert.setContentText("Zuerst Backend starten, dann Client neu starten!");
-            alert.showAndWait();
-            Platform.exit();
+            message();
         }
 //
     }
 
+    private static void message() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Verbindungsfehler");
+        alert.setContentText("Zuerst Backend starten, dann Client neu starten!");
+        alert.showAndWait();
+        Platform.exit();
+    }
+
+
+    /**
+     * TODO extract
+     * @param actionEvent
+     */
     public void onDelete(ActionEvent actionEvent) {
         Book book = listView.getSelectionModel().getSelectedItem();
         listView.getItems().remove(book);
