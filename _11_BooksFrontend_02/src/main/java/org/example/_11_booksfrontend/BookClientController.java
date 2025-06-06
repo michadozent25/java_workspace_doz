@@ -1,9 +1,10 @@
 package org.example._11_booksfrontend;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.example._11_booksfrontend.client.BookClient;
 import org.example._11_booksfrontend.model.Book;
@@ -13,7 +14,7 @@ import java.util.List;
 public class BookClientController {
 
 
-   @FXML
+    @FXML
     private ListView<Book> listView;
 
     private BookClient client = new BookClient();
@@ -21,8 +22,8 @@ public class BookClientController {
     @FXML
     private TextField authorField;
 
-   // @FXML
-  //  private TextArea booksArea;
+    // @FXML
+    //  private TextArea booksArea;
 
     @FXML
     private TextField isbnField;
@@ -45,19 +46,28 @@ public class BookClientController {
 
 
     @FXML
-    void initialize(){
+    void initialize() {
         try {
             List<Book> books = client.getAllBooks();
-            for (Book b:books){
+            for (Book b : books) {
                 //booksArea.appendText(b+"\n");
                 listView.getItems().add(b);
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Verbindungsfehler");
+            alert.setContentText("Zuerst Backend starten, dann Client neu starten!");
+            alert.showAndWait();
+            Platform.exit();
         }
-
-
+//
     }
 
+    public void onDelete(ActionEvent actionEvent) {
+        Book book = listView.getSelectionModel().getSelectedItem();
+        listView.getItems().remove(book);
+        // hier dann bookClient.remove(book)
+
+    }
 }

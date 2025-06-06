@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
 <BorderPane prefHeight="459.0" prefWidth="611.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example._11_booksfrontend.BookClientController">
    <center>
       <AnchorPane style="-fx-background-color: #999;">
@@ -20,6 +19,7 @@
               <TextField fx:id="authorField" layoutX="36.0" layoutY="136.0" prefWidth="200.0" promptText="Autor" />
               <Button layoutX="243.0" layoutY="136.0" mnemonicParsing="false" onAction="#onSave" text="Save" />
             <ListView fx:id="listView" layoutX="36.0" layoutY="178.0" prefHeight="200.0" prefWidth="421.0" />
+            <Button layoutX="478.0" layoutY="343.0" mnemonicParsing="false" onAction="#onDelete" text="Delete" />
           </children>
       </AnchorPane>
    </center>
