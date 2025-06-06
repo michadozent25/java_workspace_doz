@@ -2,6 +2,7 @@ package org.example._11_booksfrontend;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.example._11_booksfrontend.client.BookClient;
@@ -9,14 +10,19 @@ import org.example._11_booksfrontend.model.Book;
 
 import java.util.List;
 
-public class HelloController {
+public class BookClientController {
+
+
+   @FXML
+    private ListView<Book> listView;
+
     private BookClient client = new BookClient();
 
     @FXML
     private TextField authorField;
 
-    @FXML
-    private TextArea booksArea;
+   // @FXML
+  //  private TextArea booksArea;
 
     @FXML
     private TextField isbnField;
@@ -30,7 +36,7 @@ public class HelloController {
         Book book = new Book(isbnField.getText(), titleField.getText(), authorField.getText());
         try {
             client.addBook(book);
-            booksArea.clear();
+            listView.getItems().clear();
             initialize();
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -43,12 +49,15 @@ public class HelloController {
         try {
             List<Book> books = client.getAllBooks();
             for (Book b:books){
-                booksArea.appendText(b+"\n");
+                //booksArea.appendText(b+"\n");
+                listView.getItems().add(b);
             }
 
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+
     }
 
 }
